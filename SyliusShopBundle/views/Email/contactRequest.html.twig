@@ -1,0 +1,16 @@
+{#
+
+    Available variables:
+
+    * "data.email" - Contact email address;
+    * "data.message" - The message's content.
+
+#}
+
+{% block subject %}
+{% endblock %}
+
+{% block body %}
+    {% autoescape %}
+    {% endautoescape %}
+{% endblock %}

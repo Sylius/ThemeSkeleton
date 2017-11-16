@@ -1,0 +1,14 @@
+{
+  "name": "sylius/theme-skeleton",
+  "authors": [
+    {
+      "name": "Sylius",
+      "email": "contact@sylius.com"
+    }
+  ],
+  "extra": {
+    "sylius-theme": {
+      "title": "Sylius Theme Skeleton"
+    }
+  }
+}

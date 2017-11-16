@@ -1,0 +1,20 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+    {% set lastPayment = order.payments.last() %}
+    <div id="sylius-thank-you">
+        {{ 'sylius.ui.thank_you'|trans }}
+        {{ 'sylius.ui.placed_an_order'|trans }}
+    </div>
+    {{ sonata_block_render_event('sylius.shop.order.thank_you.after_message', {'order': order}) }}
+
+    {% if lastPayment != false %}
+        {% if lastPayment.method.instructions is not null %}
+            <div id="sylius-payment-method-instructions">
+                {{ lastPayment.method.instructions }}
+            </div>
+        {% endif %}
+        <a href="{{ path('sylius_shop_order_show', {'tokenValue': order.tokenValue}) }}"
+           id="sylius-show-order">{{ 'sylius.ui.view_your_order_or_change_payment_method'|trans }}</a>
+    {% endif %}
+{% endblock %}

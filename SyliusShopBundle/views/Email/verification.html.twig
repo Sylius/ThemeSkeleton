@@ -1,0 +1,16 @@
+{#
+
+    Available variables:
+
+    * "channel" - The channel in which the customer has registered;
+    * "user" - The ShopUser entity.
+
+#}
+
+{% set url = channel.hostname is not null ? 'http://' ~ channel.hostname ~ path('sylius_shop_user_verification', {'token': user.emailVerificationToken}) : url('sylius_shop_user_verification', {'token': user.emailVerificationToken}) %}
+
+{% block subject %}
+{% endblock %}
+
+{% block body %}
+{% endblock %}
