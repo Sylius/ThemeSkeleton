@@ -17,7 +17,7 @@ In your new Sylius project (initialized with Standard Edition), run the followin
 
 ```
 cd app/themes
-composer create-project sylius/theme-skeleton MyNewTheme
+composer create-project sylius/theme-skeleton MyNewTheme --stability=dev
 ```
 
 Documentation
